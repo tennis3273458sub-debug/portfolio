@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>千葉のおすすめ観光名所</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="header">
+        <h1>千葉のおすすめ観光名所</h1>
+        <!-- スポット追加ボタン -->
+        <button onclick="addSpot()" style="padding: 10px 20px; font-size: 16px; background-color: #0066cc; color: white; border: none; border-radius: 6px; cursor: pointer; margin-top: 10px;">スポットを追加する</button>
+    </div>
+
+    <div class="container" id="spot-container">
+        <!-- 1つ目のスポット -->
+        <div class="card">
+            <img class="site-image" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800" alt="海と灯台">
+            <div class="content">
+                <span class="tag">銚子エリア</span>
+                <h2>犬吠埼灯台</h2>
+                <p>関東最東端に位置し、太平洋の雄大なパノラマを楽しめる絶景スポットです。白亜の美しい灯台は、日本の「世界灯台100選」にも選ばれています。</p>
+            </div>
+        </div>
+
+        <!-- 2つ目のスポット -->
+        <div class="card">
+            <img class="site-image" src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800" alt="日本の寺院">
+            <div class="content">
+                <span class="tag">成田エリア</span>
+                <h2>成田山新勝寺</h2>
+                <p>1000年以上の歴史を持つ全国有数の霊場。参道には伝統的なうなぎ料理店や土産物店が立ち並び、年間を通じて多くの参拝客で賑わいます。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScriptファイルの読み込み -->
+    <script src="script.js"></script>
+</body>
+</html>
