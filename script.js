@@ -5,31 +5,31 @@ function addSpot() {
     const newCard = document.createElement('div');
     newCard.className = 'card scroll-fade is-visible';
     newCard.innerHTML = `
-        <img class="site-image" src="https://images.unsplash.com/photo-1540206395-68808572332f?w=800" alt="万座毛">
+        <img class="site-image" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800" alt="新スポット">
         <div class="content">
-            <span class="tag">恩納村エリア</span>
-            <h2>万座毛（まんざもう）</h2>
-            <p>隆起サンゴ礁の断崖に広がる芝生と、象の鼻に似た奇岩が有名な景勝地。夕日の名所としても大人気です。</p>
+            <span class="tag">追加スポット</span>
+            <h2>新しいおすすめスポット</h2>
+            <p>追加された新しい観光スポット情報です。</p>
         </div>
     `;
     
     container.appendChild(newCard);
 }
 
-// スクロール監視の処理（画面の中央付近までスクロールしたら表示）
-document.addEventListener("DOMContentLoaded", function () {
-    const fadeElements = document.querySelectorAll(".scroll-fade");
+// スクロール検知処理
+function checkScroll() {
+    const fadeElements = document.querySelectorAll('.scroll-fade');
+    const triggerBottom = window.innerHeight - 80; // 画面下から80px入った位置
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("is-visible");
-            }
-        });
-    }, {
-        rootMargin: "0px 0px -100px 0px", // 画面下部から100px入った位置でアニメーション発火
-        threshold: 0.1
+    fadeElements.forEach(el => {
+        const boxTop = el.getBoundingClientRect().top;
+
+        if (boxTop < triggerBottom) {
+            el.classList.add('is-visible');
+        }
     });
+}
 
-    fadeElements.forEach((el) => observer.observe(el));
-});
+// スクロール時と読み込み時にチェック実行
+window.addEventListener('scroll', checkScroll);
+window.addEventListener('load', checkScroll);
