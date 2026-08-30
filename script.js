@@ -1,4 +1,4 @@
-// スポット追加処理
+// スポット追加関数
 function addSpot() {
     const container = document.getElementById('spot-container');
     
@@ -16,20 +16,23 @@ function addSpot() {
     container.appendChild(newCard);
 }
 
-// スクロール検知処理
-function checkScroll() {
-    const fadeElements = document.querySelectorAll('.scroll-fade');
-    const triggerBottom = window.innerHeight - 80; // 画面下から80px入った位置
+// 厳格なスクロール位置判定関数
+function handleScroll() {
+    const targets = document.querySelectorAll('.scroll-fade');
+    const triggerPoint = window.innerHeight - 150; // 画面下から150px上がってきた位置で判定
 
-    fadeElements.forEach(el => {
-        const boxTop = el.getBoundingClientRect().top;
+    targets.forEach(target => {
+        const top = target.getBoundingClientRect().top;
 
-        if (boxTop < triggerBottom) {
-            el.classList.add('is-visible');
+        if (top < triggerPoint) {
+            target.classList.add('is-visible');
         }
     });
 }
 
-// スクロール時と読み込み時にチェック実行
-window.addEventListener('scroll', checkScroll);
-window.addEventListener('load', checkScroll);
+// スクロール時および画面ロード完了時に判定実行
+window.addEventListener('scroll', handleScroll);
+window.addEventListener('load', () => {
+    // ページトップへ強制スクロールして初期状態を保持
+    setTimeout(handleScroll, 100);
+});
