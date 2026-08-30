@@ -1,9 +1,10 @@
 body {
     font-family: 'Helvetica Neue', Arial, 'メイリオ', sans-serif;
-    background-color: #121212;
-    color: #e0e0e0;
+    background-color: #0b0c10;
+    color: #c5c6c7;
     margin: 0;
-    padding: 0 0 60px 0;
+    padding: 0 0 80px 0;
+    overflow-x: hidden;
 }
 
 /* ナビゲーションバー */
@@ -11,106 +12,140 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background-color: #000000;
-    border-bottom: 1px solid #333;
+    padding: 24px 50px;
+    background: rgba(11, 12, 16, 0.85);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 .logo {
     font-size: 20px;
-    font-weight: bold;
-    letter-spacing: 2px;
+    font-weight: 700;
+    letter-spacing: 3px;
     color: #fff;
 }
 .navbar nav a {
-    color: #aaa;
+    color: #8892b0;
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 28px;
     font-size: 14px;
-    transition: color 0.3s;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
 }
 .navbar nav a:hover,
 .navbar nav a.active {
-    color: #00d2ff;
+    color: #64ffda;
 }
 
 /* メインビジュアル */
 .hero {
     text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200');
+    padding: 100px 20px;
+    background: radial-gradient(circle at center, rgba(100, 255, 218, 0.1) 0%, rgba(11, 12, 16, 1) 70%),
+                linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+                url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200');
     background-size: cover;
     background-position: center;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 .hero h1 {
-    font-size: 32px;
-    color: #fff;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
+    font-size: 40px;
+    color: #ffffff;
+    margin-bottom: 24px;
+    letter-spacing: 2px;
+    font-weight: 700;
 }
 
 .btn-primary {
-    padding: 12px 24px;
-    font-size: 15px;
-    background-color: #00d2ff;
-    color: #000;
-    font-weight: bold;
-    border: none;
-    border-radius: 30px;
+    padding: 14px 32px;
+    font-size: 14px;
+    background: transparent;
+    color: #64ffda;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 1px solid #64ffda;
+    border-radius: 4px;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: all 0.3s ease;
 }
 .btn-primary:hover {
-    transform: scale(1.05);
+    background: rgba(100, 255, 218, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -10px rgba(100, 255, 218, 0.3);
 }
 
 /* カードレイアウト */
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 36px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
 }
 .card {
-    background: #1e1e1e;
-    border-radius: 12px;
+    background: #112240;
+    border-radius: 8px;
     overflow: hidden;
-    border: 1px solid #333;
-    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 210, 255, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.7), 0 0 15px rgba(100, 255, 218, 0.2);
+    border-color: rgba(100, 255, 218, 0.3);
 }
+
 .site-image {
     width: 100%;
     height: 220px;
     object-fit: cover;
+    transition: transform 0.5s ease;
 }
+.card:hover .site-image {
+    transform: scale(1.05); /* マウスホバーで画像を拡大 */
+}
+
 .content {
-    padding: 20px;
+    padding: 24px;
 }
 .tag {
     display: inline-block;
-    background: #00d2ff1a;
-    color: #00d2ff;
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    border: 1px solid #00d2ff4d;
+    background: rgba(100, 255, 218, 0.1);
+    color: #64ffda;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
 }
 h2 {
-    font-size: 20px;
-    margin: 0 0 10px 0;
-    color: #fff;
+    font-size: 22px;
+    margin: 0 0 12px 0;
+    color: #e6f1ff;
+    font-weight: 600;
 }
 p {
-    line-height: 1.6;
-    color: #aaa;
+    line-height: 1.7;
+    color: #8892b0;
     font-size: 14px;
     margin: 0;
+}
+
+/* ==========================================
+   スクロール発火アニメーション設定
+   ========================================== */
+.fade-in-target {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* JavaScriptでこのクラスが付くと浮き上がる */
+.fade-in-target.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
