@@ -3,40 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>千葉のおすすめ観光名所</title>
+    <title>OKINAWA TRAVEL | 沖縄観光ガイド</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="header">
-        <h1>千葉のおすすめ観光名所</h1>
-        <!-- スポット追加ボタン -->
-        <button onclick="addSpot()" style="padding: 10px 20px; font-size: 16px; background-color: #0066cc; color: white; border: none; border-radius: 6px; cursor: pointer; margin-top: 10px;">スポットを追加する</button>
+    <!-- ヘッダー＆ナビゲーション -->
+    <header class="navbar">
+        <div class="logo">OKINAWA TRAVEL</div>
+        <nav>
+            <a href="index.html" class="active">ホーム</a>
+            <a href="spots.html">スポット一覧</a>
+        </nav>
+    </header>
+
+    <!-- メインビジュアル -->
+    <div class="hero">
+        <h1>青い海と豊かな自然に出会う旅</h1>
+        <button onclick="addSpot()" class="btn-primary">おすすめスポットを追加</button>
     </div>
 
+    <!-- コンテンツカード -->
     <div class="container" id="spot-container">
-        <!-- 1つ目のスポット -->
         <div class="card">
-            <img class="site-image" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800" alt="海と灯台">
+            <img class="site-image" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800" alt="古宇利島">
             <div class="content">
-                <span class="tag">銚子エリア</span>
-                <h2>犬吠埼灯台</h2>
-                <p>関東最東端に位置し、太平洋の雄大なパノラマを楽しめる絶景スポットです。白亜の美しい灯台は、日本の「世界灯台100選」にも選ばれています。</p>
+                <span class="tag">北部エリア</span>
+                <h2>古宇利大橋</h2>
+                <p>エメラルドグリーンの海を渡る絶景ドライブコース。橋を渡った先にはハートロックなどの名所が広がります。</p>
             </div>
         </div>
 
-        <!-- 2つ目のスポット -->
         <div class="card">
-            <img class="site-image" src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800" alt="日本の寺院">
+            <img class="site-image" src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800" alt="美ら海水族館">
             <div class="content">
-                <span class="tag">成田エリア</span>
-                <h2>成田山新勝寺</h2>
-                <p>1000年以上の歴史を持つ全国有数の霊場。参道には伝統的なうなぎ料理店や土産物店が立ち並び、年間を通じて多くの参拝客で賑わいます。</p>
+                <span class="tag">本部エリア</span>
+                <h2>沖縄美ら海水族館</h2>
+                <p>巨大水槽「黒潮の海」で泳ぐジンベエザメやマンタは圧巻。沖縄の海の神秘を間近で体感できます。</p>
             </div>
         </div>
     </div>
 
-    <!-- JavaScriptファイルの読み込み -->
     <script src="script.js"></script>
 </body>
 </html>
